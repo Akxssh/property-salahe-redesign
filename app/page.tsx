@@ -83,10 +83,10 @@ export default function Home() {
               {/* Tabs for filtering */}
               <Tabs value={activeTab} onValueChange={setActiveTab}>
                 <TabsList className="bg-white border">
-                  <TabsTrigger value="recommended" className="gap-1">
+                  <TabsTrigger value="recommended" className="gap-1 text-sm">
                     🏠 Recommended
                   </TabsTrigger>
-                  <TabsTrigger value="top-projects" className="gap-1">
+                  <TabsTrigger value="top-projects" className="gap-1 text-sm">
                     ⭐ Top Projects
                   </TabsTrigger>
                 </TabsList>
@@ -94,7 +94,7 @@ export default function Home() {
             </div>
           </motion.div>
 
-          {/* Property Grid */}
+          {/* Property Grid - 1 col mobile, 2 col tablet, 3 col desktop */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {isLoading
               ? Array.from({ length: 6 }).map((_, index) => (
@@ -129,8 +129,8 @@ export default function Home() {
           </motion.div>
         </div>
 
-        {/* Right Sidebar - Hidden on mobile */}
-        <div className="w-full lg:w-80 flex-shrink-0">
+        {/* Right Sidebar - Hidden on mobile, shown on lg screens */}
+        <div className="hidden lg:block w-80 flex-shrink-0">
           <Sidebar />
         </div>
       </div>
@@ -223,7 +223,7 @@ export default function Home() {
             </div>
           </div>
           <div className="border-t border-slate-800 pt-8 text-center text-sm">
-            <p>© 2025 PropertySalahe.com. All rights reserved.</p>
+            <p>© 2026 PropertySalahe.com. All rights reserved.</p>
           </div>
         </div>
       </footer>

@@ -15,6 +15,8 @@ import {
   LogIn,
   UserPlus,
   Bell,
+  X,
+  ChevronRight,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -32,6 +34,14 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { Badge } from "@/components/ui/badge";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 const menuItems = {
   forBuyers: [
@@ -61,6 +71,7 @@ const menuItems = {
 export function Navbar() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -285,15 +296,135 @@ export function Navbar() {
               <Button className="hidden sm:flex bg-orange-500 hover:bg-orange-600 text-white font-medium h-9 md:h-10 px-3 md:px-4">
                 <span className="hidden lg:inline">Post Property </span>FREE
               </Button>
-              <Button variant="ghost" size="icon" className="text-gray-600 hover:bg-gray-100 h-9 w-9 md:h-10 md:w-10">
+              <Button variant="ghost" size="icon" className="hidden sm:flex text-gray-600 hover:bg-gray-100 h-9 w-9 md:h-10 md:w-10">
                 <Bell className="w-5 h-5 md:w-6 md:h-6" />
               </Button>
-              <Button variant="ghost" size="icon" className="text-gray-600 hover:bg-gray-100 h-9 w-9 md:h-10 md:w-10">
+              <Button variant="ghost" size="icon" className="hidden sm:flex text-gray-600 hover:bg-gray-100 h-9 w-9 md:h-10 md:w-10">
                 <UserCircle className="w-5 h-5 md:w-6 md:h-6" />
               </Button>
-              <Button variant="ghost" size="icon" className="text-gray-600 hover:bg-gray-100 h-9 w-9 md:h-10 md:w-10 lg:hidden">
-                <Menu className="w-5 h-5 md:w-6 md:h-6" />
-              </Button>
+              {/* Mobile Menu Button */}
+              <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+                <SheetTrigger asChild>
+                  <Button variant="ghost" size="icon" className="flex lg:hidden text-gray-600 hover:bg-gray-100 h-9 w-9 md:h-10 md:w-10">
+                    <Menu className="w-5 h-5 md:w-6 md:h-6" />
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="right" className="w-[300px] sm:w-[400px] p-0">
+                  <SheetHeader className="border-b pb-4 px-6">
+                    <SheetTitle className="flex items-center gap-2">
+                      <span className="text-orange-500 font-bold">PropertySalahe.com</span>
+                    </SheetTitle>
+                  </SheetHeader>
+                  <ScrollArea className="h-[calc(100vh-80px)] px-6 py-4">
+                    <div className="space-y-6">
+                      {/* Login/Register */}
+                      {!isLoggedIn ? (
+                        <div className="space-y-2">
+                          <Button className="w-full bg-orange-500 hover:bg-orange-600" onClick={() => setIsLoggedIn(true)}>
+                            <LogIn className="w-4 h-4 mr-2" />
+                            Login
+                          </Button>
+                          <Button variant="outline" className="w-full" onClick={() => setIsLoggedIn(true)}>
+                            <UserPlus className="w-4 h-4 mr-2" />
+                            Register
+                          </Button>
+                        </div>
+                      ) : (
+                        <div className="flex items-center gap-3 p-3 bg-gray-100 rounded-lg">
+                          <UserCircle className="w-10 h-10 text-gray-600" />
+                          <div>
+                            <p className="font-medium">Welcome Back!</p>
+                            <p className="text-xs text-gray-500">Logged in</p>
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Navigation Links */}
+                      <div className="space-y-2">
+                        <p className="text-sm font-semibold text-gray-700">For Buyers</p>
+                        {menuItems.forBuyers.map((item, index) => (
+                          <a
+                            key={index}
+                            href={item.href}
+                            className="flex items-center justify-between p-3 rounded-lg hover:bg-gray-50 transition-colors"
+                          >
+                            <div className="flex items-center gap-3">
+                              <item.icon className="w-5 h-5 text-gray-500" />
+                              <span className="font-medium">{item.title}</span>
+                            </div>
+                            {item.badge && (
+                              <Badge className={item.badge === "FREE" ? "bg-green-500" : "bg-blue-500"}>
+                                {item.badge}
+                              </Badge>
+                            )}
+                          </a>
+                        ))}
+                      </div>
+
+                      <div className="space-y-2">
+                        <p className="text-sm font-semibold text-gray-700">For Owners</p>
+                        {menuItems.forOwners.map((item, index) => (
+                          <a
+                            key={index}
+                            href={item.href}
+                            className="flex items-center justify-between p-3 rounded-lg hover:bg-gray-50 transition-colors"
+                          >
+                            <div className="flex items-center gap-3">
+                              <item.icon className="w-5 h-5 text-gray-500" />
+                              <span className="font-medium">{item.title}</span>
+                            </div>
+                            {item.badge && (
+                              <Badge className="bg-green-500">{item.badge}</Badge>
+                            )}
+                          </a>
+                        ))}
+                      </div>
+
+                      <div className="space-y-2">
+                        <p className="text-sm font-semibold text-gray-700">Property Services</p>
+                        {menuItems.services.map((item, index) => (
+                          <a
+                            key={index}
+                            href={item.href}
+                            className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors"
+                          >
+                            <item.icon className="w-5 h-5 text-blue-600" />
+                            <div>
+                              <p className="font-medium">{item.title}</p>
+                              <p className="text-xs text-gray-500">{item.description}</p>
+                            </div>
+                          </a>
+                        ))}
+                      </div>
+
+                      <div className="space-y-2">
+                        <p className="text-sm font-semibold text-gray-700">Insights</p>
+                        {menuItems.insights.map((item, index) => (
+                          <a
+                            key={index}
+                            href={item.href}
+                            className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors"
+                          >
+                            <item.icon className="w-5 h-5 text-gray-500" />
+                            <span className="font-medium">{item.title}</span>
+                          </a>
+                        ))}
+                      </div>
+
+                      {/* Contact */}
+                      <div className="pt-4 border-t">
+                        <Button variant="outline" className="w-full mb-2">
+                          <Headset className="w-4 h-4 mr-2" />
+                          Contact Support
+                        </Button>
+                        <Button variant="ghost" className="w-full text-gray-500">
+                          Download App
+                        </Button>
+                      </div>
+                    </div>
+                  </ScrollArea>
+                </SheetContent>
+              </Sheet>
             </div>
           </div>
         </div>

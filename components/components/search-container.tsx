@@ -54,40 +54,42 @@ export function SearchContainer({ onSearch }: SearchContainerProps) {
 
   return (
     <div className="w-full max-w-3xl">
-      {/* Tabs - Pill Style */}
+      {/* Tabs - Pill Style with horizontal scroll on mobile */}
       <Tabs defaultValue="buy" className="mb-4">
-        <TabsList className="bg-white/95 backdrop-blur-sm rounded-full p-1.5 shadow-lg border border-white/50 inline-flex">
-          <TabsTrigger
-            value="buy"
-            className="rounded-full px-4 py-2 text-sm font-medium transition-all data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=active]:shadow-md data-[state=inactive]:text-gray-600 data-[state=inactive]:hover:bg-gray-100"
-          >
-            🏠 Buy
-          </TabsTrigger>
-          <TabsTrigger
-            value="rent"
-            className="rounded-full px-4 py-2 text-sm font-medium transition-all data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=active]:shadow-md data-[state=inactive]:text-gray-600 data-[state=inactive]:hover:bg-gray-100"
-          >
-            🏢 Rent
-          </TabsTrigger>
-          <TabsTrigger
-            value="new-launch"
-            className="rounded-full px-4 py-2 text-sm font-medium transition-all data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=active]:shadow-md data-[state=inactive]:text-gray-600 data-[state=inactive]:hover:bg-gray-100"
-          >
-            ✨ New Launch
-          </TabsTrigger>
-          <TabsTrigger
-            value="commercial"
-            className="rounded-full px-4 py-2 text-sm font-medium transition-all data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=active]:shadow-md data-[state=inactive]:text-gray-600 data-[state=inactive]:hover:bg-gray-100"
-          >
-            🏬 Commercial
-          </TabsTrigger>
-          <TabsTrigger
-            value="plots"
-            className="rounded-full px-4 py-2 text-sm font-medium transition-all data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=active]:shadow-md data-[state=inactive]:text-gray-600 data-[state=inactive]:hover:bg-gray-100"
-          >
-            🌳 Plots/Land
-          </TabsTrigger>
-        </TabsList>
+        <div className="overflow-x-auto -mx-4 px-4 pb-2 scrollbar-hide">
+          <TabsList className="bg-white/95 backdrop-blur-sm rounded-full p-1.5 shadow-lg border border-white/50 inline-flex whitespace-nowrap">
+            <TabsTrigger
+              value="buy"
+              className="rounded-full px-4 py-2 text-sm font-medium transition-all data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=active]:shadow-md data-[state=inactive]:text-gray-600 data-[state=inactive]:hover:bg-gray-100"
+            >
+              🏠 Buy
+            </TabsTrigger>
+            <TabsTrigger
+              value="rent"
+              className="rounded-full px-4 py-2 text-sm font-medium transition-all data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=active]:shadow-md data-[state=inactive]:text-gray-600 data-[state=inactive]:hover:bg-gray-100"
+            >
+              🏢 Rent
+            </TabsTrigger>
+            <TabsTrigger
+              value="new-launch"
+              className="rounded-full px-4 py-2 text-sm font-medium transition-all data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=active]:shadow-md data-[state=inactive]:text-gray-600 data-[state=inactive]:hover:bg-gray-100"
+            >
+              ✨ New Launch
+            </TabsTrigger>
+            <TabsTrigger
+              value="commercial"
+              className="rounded-full px-4 py-2 text-sm font-medium transition-all data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=active]:shadow-md data-[state=inactive]:text-gray-600 data-[state=inactive]:hover:bg-gray-100"
+            >
+              🏬 Commercial
+            </TabsTrigger>
+            <TabsTrigger
+              value="plots"
+              className="rounded-full px-4 py-2 text-sm font-medium transition-all data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=active]:shadow-md data-[state=inactive]:text-gray-600 data-[state=inactive]:hover:bg-gray-100"
+            >
+              🌳 Plots/Land
+            </TabsTrigger>
+          </TabsList>
+        </div>
       </Tabs>
 
       {/* Search Input - Housing.com Style */}
