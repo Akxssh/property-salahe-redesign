@@ -1,0 +1,176 @@
+export interface Property {
+  id: string;
+  title: string;
+  location: string;
+  locality: string;
+  price: string;
+  priceNumeric: number;
+  postedBy: "Owner" | "Dealer" | "Builder";
+  time: string;
+  image: string;
+  amenities: string[];
+  bhk: number;
+  area: string;
+  verified: boolean;
+  featured: boolean;
+  readyToMove: boolean;
+  description: string;
+}
+
+export const properties: Property[] = [
+  {
+    id: "1",
+    title: "2 BHK Independent House",
+    location: "Prasanth Layout, Whitefield",
+    locality: "Whitefield",
+    price: "₹ 75 L",
+    priceNumeric: 7500000,
+    postedBy: "Owner",
+    time: "5 months ago",
+    image: "https://loremflickr.com/400/300/house,building?lock=1",
+    amenities: ["2 Baths", "1 Balcony", "1150 sqft", "Parking"],
+    bhk: 2,
+    area: "1150 sqft",
+    verified: true,
+    featured: false,
+    readyToMove: true,
+    description: "Spacious 2 BHK independent house with modern amenities in prime Whitefield location. Close to IT parks and metro station.",
+  },
+  {
+    id: "2",
+    title: "3 BHK Luxury Apartment",
+    location: "Koramangala 5th Block",
+    locality: "Koramangala",
+    price: "₹ 1.2 Cr",
+    priceNumeric: 12000000,
+    postedBy: "Dealer",
+    time: "2 days ago",
+    image: "https://loremflickr.com/400/300/apartment,building?lock=2",
+    amenities: ["3 Baths", "2 Balconies", "1850 sqft", "Gym", "Pool"],
+    bhk: 3,
+    area: "1850 sqft",
+    verified: true,
+    featured: true,
+    readyToMove: true,
+    description: "Premium 3 BHK apartment with club house, swimming pool, and 24/7 security. Perfect for families.",
+  },
+  {
+    id: "3",
+    title: "1 BHK Studio Apartment",
+    location: "HSR Layout Sector 7",
+    locality: "HSR Layout",
+    price: "₹ 45 L",
+    priceNumeric: 4500000,
+    postedBy: "Owner",
+    time: "1 week ago",
+    image: "https://loremflickr.com/400/300/studio,apartment?lock=3",
+    amenities: ["1 Bath", "1 Balcony", "650 sqft", "Power Backup"],
+    bhk: 1,
+    area: "650 sqft",
+    verified: false,
+    featured: false,
+    readyToMove: true,
+    description: "Cozy studio apartment ideal for bachelors or couples. Walking distance to restaurants and cafes.",
+  },
+  {
+    id: "4",
+    title: "4 BHK Premium Villa",
+    location: "Sarjapur Road",
+    locality: "Sarjapur Road",
+    price: "₹ 2.5 Cr",
+    priceNumeric: 25000000,
+    postedBy: "Builder",
+    time: "3 days ago",
+    image: "https://loremflickr.com/400/300/villa,luxury?lock=4",
+    amenities: ["4 Baths", "3 Balconies", "3200 sqft", "Garden", "Servant Room"],
+    bhk: 4,
+    area: "3200 sqft",
+    verified: true,
+    featured: true,
+    readyToMove: false,
+    description: "Luxurious 4 BHK villa with private garden and premium finishes. Gated community with world-class amenities.",
+  },
+  {
+    id: "5",
+    title: "2 BHK Modern Flat",
+    location: "Electronic City Phase 1",
+    locality: "Electronic City",
+    price: "₹ 68 L",
+    priceNumeric: 6800000,
+    postedBy: "Owner",
+    time: "1 day ago",
+    image: "https://loremflickr.com/400/300/flat,modern?lock=5",
+    amenities: ["2 Baths", "1 Balcony", "1050 sqft", "Lift", "Parking"],
+    bhk: 2,
+    area: "1050 sqft",
+    verified: true,
+    featured: false,
+    readyToMove: true,
+    description: "Well-maintained 2 BHK flat near Electronic City. Perfect for IT professionals.",
+  },
+  {
+    id: "6",
+    title: "3 BHK Penthouse",
+    location: "Indiranagar 100 Feet Road",
+    locality: "Indiranagar",
+    price: "₹ 3.8 Cr",
+    priceNumeric: 38000000,
+    postedBy: "Dealer",
+    time: "4 days ago",
+    image: "https://loremflickr.com/400/300/penthouse,luxury?lock=6",
+    amenities: ["4 Baths", "2 Terraces", "2800 sqft", "Smart Home", "Concierge"],
+    bhk: 3,
+    area: "2800 sqft",
+    verified: true,
+    featured: true,
+    readyToMove: true,
+    description: "Stunning penthouse with panoramic city views. Premium location in the heart of Indiranagar.",
+  },
+  {
+    id: "7",
+    title: "2 BHK Garden Apartment",
+    location: "BTM Layout 2nd Stage",
+    locality: "BTM Layout",
+    price: "₹ 82 L",
+    priceNumeric: 8200000,
+    postedBy: "Owner",
+    time: "6 days ago",
+    image: "https://loremflickr.com/400/300/apartment,garden?lock=7",
+    amenities: ["2 Baths", "2 Balconies", "1200 sqft", "Garden View"],
+    bhk: 2,
+    area: "1200 sqft",
+    verified: false,
+    featured: false,
+    readyToMove: true,
+    description: "Ground floor apartment with direct garden access. Peaceful and green surroundings.",
+  },
+  {
+    id: "8",
+    title: "3 BHK Tech Park View",
+    location: "Marathahalli ORR",
+    locality: "Marathahalli",
+    price: "₹ 95 L",
+    priceNumeric: 9500000,
+    postedBy: "Dealer",
+    time: "2 weeks ago",
+    image: "https://loremflickr.com/400/300/apartment,modern?lock=8",
+    amenities: ["3 Baths", "2 Balconies", "1650 sqft", "Club House", "Tennis Court"],
+    bhk: 3,
+    area: "1650 sqft",
+    verified: true,
+    featured: false,
+    readyToMove: true,
+    description: "Spacious apartment with tech park view. Excellent connectivity to major IT hubs.",
+  },
+];
+
+export const trendingLocalities = [
+  { name: "Whitefield", avgPrice: "₹ 6,500/sqft", growth: "+12%" },
+  { name: "Koramangala", avgPrice: "₹ 12,000/sqft", growth: "+8%" },
+  { name: "HSR Layout", avgPrice: "₹ 9,800/sqft", growth: "+15%" },
+  { name: "Electronic City", avgPrice: "₹ 5,200/sqft", growth: "+10%" },
+  { name: "Sarjapur Road", avgPrice: "₹ 7,500/sqft", growth: "+18%" },
+  { name: "Indiranagar", avgPrice: "₹ 15,000/sqft", growth: "+5%" },
+];
+
+export const recentlyViewedDefault: string[] = [];
