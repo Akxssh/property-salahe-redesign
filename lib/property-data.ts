@@ -165,12 +165,59 @@ export const properties: Property[] = [
 ];
 
 export const trendingLocalities = [
-  { name: "Whitefield", avgPrice: "₹ 6,500/sqft", growth: "+12%" },
-  { name: "Koramangala", avgPrice: "₹ 12,000/sqft", growth: "+8%" },
-  { name: "HSR Layout", avgPrice: "₹ 9,800/sqft", growth: "+15%" },
-  { name: "Electronic City", avgPrice: "₹ 5,200/sqft", growth: "+10%" },
-  { name: "Sarjapur Road", avgPrice: "₹ 7,500/sqft", growth: "+18%" },
-  { name: "Indiranagar", avgPrice: "₹ 15,000/sqft", growth: "+5%" },
+  { name: "Whitefield", avgPrice: "₹ 6,500/sqft", growth: "+12%", zone: "east" },
+  { name: "Koramangala", avgPrice: "₹ 12,000/sqft", growth: "+8%", zone: "south" },
+  { name: "HSR Layout", avgPrice: "₹ 9,800/sqft", growth: "+15%", zone: "south" },
+  { name: "Electronic City", avgPrice: "₹ 5,200/sqft", growth: "+10%", zone: "south" },
+  { name: "Sarjapur Road", avgPrice: "₹ 7,500/sqft", growth: "+18%", zone: "east" },
+  { name: "Indiranagar", avgPrice: "₹ 15,000/sqft", growth: "+5%", zone: "east" },
+  { name: "Yelahanka", avgPrice: "₹ 5,800/sqft", growth: "+14%", zone: "north" },
+  { name: "Airport Road", avgPrice: "₹ 6,200/sqft", growth: "+20%", zone: "north" },
+  { name: "Devanahalli", avgPrice: "₹ 4,500/sqft", growth: "+25%", zone: "north" },
+  { name: "Doddaballapura", avgPrice: "₹ 3,800/sqft", growth: "+22%", zone: "north" },
+  { name: "Marathahalli", avgPrice: "₹ 7,000/sqft", growth: "+11%", zone: "east" },
+  { name: "BTM Layout", avgPrice: "₹ 8,500/sqft", growth: "+9%", zone: "south" },
+  { name: "JP Nagar", avgPrice: "₹ 9,200/sqft", growth: "+7%", zone: "south" },
+  { name: "Rajaji Nagar", avgPrice: "₹ 11,000/sqft", growth: "+6%", zone: "west" },
+  { name: "Malleshwaram", avgPrice: "₹ 10,500/sqft", growth: "+5%", zone: "west" },
+  { name: "Vijayanagar", avgPrice: "₹ 8,800/sqft", growth: "+8%", zone: "west" },
+  { name: "Hebbal", avgPrice: "₹ 9,500/sqft", growth: "+13%", zone: "north" },
+  { name: "RT Nagar", avgPrice: "₹ 7,800/sqft", growth: "+7%", zone: "north" },
 ];
+
+export const localityZones = {
+  north: {
+    name: "North Bangalore",
+    color: "bg-blue-500",
+    lightColor: "bg-blue-50",
+    textColor: "text-blue-700",
+    borderColor: "border-blue-200",
+    localities: trendingLocalities.filter(l => l.zone === "north"),
+  },
+  south: {
+    name: "South Bangalore",
+    color: "bg-green-500",
+    lightColor: "bg-green-50",
+    textColor: "text-green-700",
+    borderColor: "border-green-200",
+    localities: trendingLocalities.filter(l => l.zone === "south"),
+  },
+  east: {
+    name: "East Bangalore",
+    color: "bg-orange-500",
+    lightColor: "bg-orange-50",
+    textColor: "text-orange-700",
+    borderColor: "border-orange-200",
+    localities: trendingLocalities.filter(l => l.zone === "east"),
+  },
+  west: {
+    name: "West Bangalore",
+    color: "bg-purple-500",
+    lightColor: "bg-purple-50",
+    textColor: "text-purple-700",
+    borderColor: "border-purple-200",
+    localities: trendingLocalities.filter(l => l.zone === "west"),
+  },
+};
 
 export const recentlyViewedDefault: string[] = [];
