@@ -223,7 +223,7 @@ export default function Home() {
             </div>
           </div>
           <div className="border-t border-slate-800 pt-8 text-center text-sm">
-            <p>© 2025 Property Salahe. All rights reserved.</p>
+            <p>© 2025 PropertySalahe.com. All rights reserved.</p>
           </div>
         </div>
       </footer>

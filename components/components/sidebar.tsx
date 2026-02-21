@@ -64,7 +64,7 @@ export function Sidebar({ isLoggedIn = false }: SidebarProps) {
                   LOGIN / REGISTER
                 </Button>
                 <p className="text-xs text-center text-gray-400 mt-2">
-                  to access all the features on Property Salahe
+                  to access all the features on PropertySalahe.com
                 </p>
               </>
             ) : (

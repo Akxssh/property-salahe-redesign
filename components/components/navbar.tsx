@@ -78,7 +78,7 @@ export function Navbar() {
       <div className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white py-2 px-4 md:px-8">
         <div className="max-w-7xl mx-auto flex items-center justify-between text-xs md:text-sm">
           <div className="flex items-center gap-3 md:gap-4">
-            <span className="text-orange-400 font-bold text-base md:text-lg">Property Salahe</span>
+            <span className="text-orange-400 font-bold text-base md:text-lg">PropertySalahe.com</span>
             <span className="hidden md:inline text-gray-500">|</span>
             <a href="#" className="hidden sm:inline text-gray-400 hover:text-white transition-colors">
               Download App
